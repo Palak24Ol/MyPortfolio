@@ -9,6 +9,17 @@ const PROJECTS = [
   { title: 'Code Editor', path: 'C:\\PALAK\\works\\code-editor', description: 'A browser-based code editor with live code execution, syntax highlighting, and a clean developer-focused interface for writing and testing code in real time.', tags: ['React', 'JavaScript', 'CodeMirror', 'Frontend'], link: 'https://github.com/Palak24Ol/my-code-editor', github: 'https://github.com/Palak24Ol/my-code-editor', color: 'var(--olive-light)', emoji: '💻', image: '/projects/code-editor.png' },
   { title: 'Database Engine', path: 'C:\\PALAK\\works\\database-engine', description: 'A custom database engine built from scratch featuring a B+ Tree index, write-ahead logging (WAL), and a hand-written SQL parser for efficient storage and query execution.', tags: ['Go', 'Database Systems', 'B+ Tree', 'SQL Parser'], link: 'https://github.com/Palak24Ol/DatabaseEngine', github: 'https://github.com/Palak24Ol/DatabaseEngine', color: 'var(--pink-accent)', emoji: '🗄️', image: '/projects/database-engine.png' },
   { title: 'AI Question Engine', path: 'C:\\PALAK\\works\\ai-question-engine', description: 'An AI-powered question generation platform that creates intelligent and dynamic questions using modern AI models with a clean interactive user experience.', tags: ['Next.js', 'TypeScript', 'Firebase', 'Gemini AI'], link: 'https://github.com/Palak24Ol/ai-question-engine', github: 'https://github.com/Palak24Ol/ai-question-engine', color: 'var(--amber)', emoji: '🧠', image: '/projects/ai-question-engine.png' },
+  {
+  title: 'Multilingual Deep Fake News Detection',
+  path: 'C:\\PALAK\\works\\deepfake-news-detection',
+  description: 'An AI-based fake news detection system capable of analyzing multilingual content and identifying deep fake or misleading news using machine learning and NLP techniques.',
+  tags: ['Python', 'Machine Learning', 'NLP', 'Deep Learning'],
+  link: 'https://github.com/Palak24Ol/Multilingual-Deep-Fake-News-Detection',
+  github: 'https://github.com/Palak24Ol/Multilingual-Deep-Fake-News-Detection',
+  color: 'var(--olive)',
+  emoji: '📰',
+  image: '/projects/deepfake-news.png',
+},
 ]
 
 interface ProjectCardProps { proj: typeof PROJECTS[0]; i: number }

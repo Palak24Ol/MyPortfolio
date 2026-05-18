@@ -56,19 +56,12 @@ export default function Resume() {
             style={{ position: 'absolute', top: 40, right: -10, fontFamily: 'var(--font-serif)', fontSize: 'clamp(20px,3.5vw,28px)', color: 'var(--olive)', zIndex: 2, userSelect: 'none' }}>
             ✿
           </motion.div>
-          <motion.div animate={{ rotate: [-8,8,-8] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ position: 'absolute', bottom: 20, left: -10, fontFamily: 'var(--font-pixel)', fontSize: 'clamp(8px,1.5vw,11px)', color: 'var(--pink-accent)', zIndex: 2, userSelect: 'none' }}>
-            {'{ code }'}
-          </motion.div>
-          <motion.div animate={{ scale: [1,1.1,1] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ position: 'absolute', bottom: -10, right: 20, fontSize: 'clamp(20px,3.5vw,28px)', zIndex: 2, userSelect: 'none' }}>
-            ☕
-          </motion.div>
-
+           
+          
           <div style={{ position: 'relative', border: '3px solid var(--olive)', boxShadow: '6px 6px 0 var(--amber)', overflow: 'hidden', maxWidth: 320, width: '100%', zIndex: 1 }}>
             <img src="/photo.png" alt="Palak Jaiswal" style={{ width: '100%', display: 'block', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(107,122,80,0.7))', padding: 'clamp(20px,4vw,32px) 16px 14px', fontFamily: 'var(--font-mono)', fontSize: 'clamp(10px,2vw,12px)', color: 'var(--cream)', letterSpacing: '0.08em' }}>
-              <ScrambleText text="Palak Jaiswal — Full Stack Dev & UI/UX Designer" />
+              <ScrambleText text="Palak Jaiswal — Full Stack Dev & Java Developer" />
             </div>
           </div>
         </motion.div>

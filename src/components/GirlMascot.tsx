@@ -10,8 +10,8 @@ export default function GirlMascot() {
     if (!hero) return
 
     const isMobile = window.innerWidth < 768
-    const LARGE = isMobile ? 200 : 425
-    const SMALL = isMobile ? 110 : 225
+    const LARGE = isMobile ? 200 : 500
+    const SMALL = isMobile ? 110 : 300
 
     const onScroll = () => {
       const el = imgRef.current
