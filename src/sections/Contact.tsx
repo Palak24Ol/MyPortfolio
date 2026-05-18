@@ -1,4 +1,4 @@
-import { useState } from 'react'
+ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import RetroWindow from '../components/RetroWindow'
 import ScrambleText from '../components/ScrambleText'
@@ -50,6 +50,7 @@ export default function Contact() {
         <div style={{ fontFamily: 'var(--font-pixel)', fontSize: 10, color: 'var(--olive)', letterSpacing: '0.1em', marginBottom: 12 }}>
           // CONTACT.EXE
         </div>
+        {/* ── section heading ── */}
         <ScrambleText
           text="Say Hello!"
           style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px, 6vw, 64px)', color: 'var(--dark)', lineHeight: 1 }}
@@ -58,7 +59,7 @@ export default function Contact() {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32, alignItems: 'start' }}>
 
-        {/* LEFT — form slides in from extreme left */}
+        {/* LEFT — form */}
         <motion.div
           initial={{ opacity: 0, x: -200 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -99,7 +100,7 @@ export default function Contact() {
           </RetroWindow>
         </motion.div>
 
-        {/* RIGHT — 3 info cards slide in from extreme right with stagger */}
+        {/* RIGHT — contact info cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <motion.div
             initial={{ opacity: 0, x: 200 }}
@@ -134,8 +135,14 @@ export default function Contact() {
             >
               <span style={{ fontSize: 20 }}>{item.icon}</span>
               <div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{item.label}</div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--olive)' }}>{item.value}</div>
+                {/* ── label scrambles on hover ── */}
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                  <ScrambleText text={item.label} />
+                </div>
+                {/* ── value scrambles on hover ── */}
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--olive)' }}>
+                  <ScrambleText text={item.value} />
+                </div>
               </div>
             </motion.a>
           ))}

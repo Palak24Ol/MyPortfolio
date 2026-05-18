@@ -15,6 +15,7 @@ export default function Resume() {
         <div style={{ fontFamily: 'var(--font-pixel)', fontSize: 10, color: 'var(--olive)', letterSpacing: '0.1em', marginBottom: 12 }}>
           // RESUME.PDF
         </div>
+        {/* ── section heading ── */}
         <ScrambleText
           text="My Resume"
           style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px, 6vw, 64px)', color: 'var(--dark)', lineHeight: 1 }}
@@ -28,7 +29,7 @@ export default function Resume() {
         alignItems: 'center',
       }}>
 
-        {/* LEFT — Resume slides in from left */}
+        {/* LEFT — Resume window */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -53,8 +54,9 @@ export default function Resume() {
             <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#E05C5C', border: '1px solid rgba(0,0,0,0.15)' }} />
             <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#E8C040', border: '1px solid rgba(0,0,0,0.15)' }} />
             <div style={{ width: 12, height: 12, borderRadius: '50%', background: 'var(--olive-light)', border: '1px solid rgba(0,0,0,0.15)' }} />
+            {/* ── filename in titlebar scrambles on hover ── */}
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--dark)', opacity: 0.6, marginLeft: 4 }}>
-              Palak_Jaiswal_Resume.pdf
+              <ScrambleText text="Palak_Jaiswal_Resume.pdf" />
             </span>
           </div>
 
@@ -72,8 +74,7 @@ export default function Resume() {
             display: 'flex',
             justifyContent: 'flex-end',
           }}>
-            {/* Added the missing '<a' right here */}
-            <a 
+            <a
               href="/resume.pdf"
               download="Palak_Jaiswal_Resume.pdf"
               style={{
@@ -89,12 +90,13 @@ export default function Resume() {
                 boxShadow: '3px 3px 0 var(--olive-dark)',
               }}
             >
-              ↓ Download PDF
+              {/* ── download button text scrambles on hover ── */}
+              <ScrambleText text="↓ Download PDF" />
             </a>
           </div>
         </motion.div>
 
-        {/* RIGHT — Photo + doodles slides in from right */}
+        {/* RIGHT — Photo + doodles */}
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -128,10 +130,6 @@ export default function Resume() {
             ✿
           </motion.div>
 
-        
-
-          
-
           {/* Photo frame */}
           <div style={{
             position: 'relative',
@@ -147,6 +145,7 @@ export default function Resume() {
               alt="Palak Jaiswal"
               style={{ width: '100%', display: 'block', objectFit: 'cover' }}
             />
+            {/* ── photo caption scrambles on hover ── */}
             <div style={{
               position: 'absolute', bottom: 0, left: 0, right: 0,
               background: 'linear-gradient(transparent, rgba(107,122,80,0.7))',
@@ -156,7 +155,7 @@ export default function Resume() {
               color: 'var(--cream)',
               letterSpacing: '0.08em',
             }}>
-              Palak Jaiswal — Full Stack Dev & UI/UX Designer
+              <ScrambleText text="Palak Jaiswal — Full Stack Dev & UI/UX Designer" />
             </div>
           </div>
 

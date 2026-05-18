@@ -36,6 +36,7 @@ export default function Skills() {
         <div style={{ fontFamily: 'var(--font-pixel)', fontSize: 10, color: 'var(--olive)', letterSpacing: '0.1em', marginBottom: 12 }}>
           // SKILLS.EXE
         </div>
+        {/* ── heading ── */}
         <ScrambleText
           text="What I Know"
           style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px, 6vw, 64px)', color: 'var(--dark)', lineHeight: 1 }}
@@ -44,7 +45,7 @@ export default function Skills() {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
 
-        {/* LEFT — skill bars slide in from extreme left */}
+        {/* LEFT — skill bars */}
         <motion.div
           initial={{ opacity: 0, x: -200 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -56,8 +57,14 @@ export default function Skills() {
               {SKILLS.map((skill, i) => (
                 <div key={skill.name}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text)' }}>{skill.name}</span>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-muted)' }}>{skill.pct}%</span>
+                    {/* ── skill name scrambles on hover ── */}
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text)' }}>
+                      <ScrambleText text={skill.name} />
+                    </span>
+                    {/* ── percentage scrambles on hover ── */}
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-muted)' }}>
+                      <ScrambleText text={`${skill.pct}%`} />
+                    </span>
                   </div>
                   <div style={{ height: 8, background: 'var(--cream-dark)', border: '1px solid var(--window-border)' }}>
                     <motion.div
@@ -74,7 +81,7 @@ export default function Skills() {
           </RetroWindow>
         </motion.div>
 
-        {/* RIGHT — tools grid slides in from extreme right */}
+        {/* RIGHT — tools grid */}
         <motion.div
           initial={{ opacity: 0, x: 200 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -99,7 +106,10 @@ export default function Skills() {
                   <div style={{ width: 44, height: 44, background: 'var(--cream)', border: '1px solid var(--window-border)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, boxShadow: '2px 2px 0 var(--window-border)' }}>
                     {tool.emoji}
                   </div>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 8, color: 'var(--text-muted)', textAlign: 'center' }}>{tool.name}</span>
+                  {/* ── tool name scrambles on hover ── */}
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 8, color: 'var(--text-muted)', textAlign: 'center' }}>
+                    <ScrambleText text={tool.name} />
+                  </span>
                 </motion.div>
               ))}
             </div>

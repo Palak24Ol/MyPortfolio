@@ -12,7 +12,7 @@ const PROJECTS = [
     github: 'https://github.com/Palak24Ol/PORTFOLIO_PALAK',
     color: 'var(--olive)',
     emoji: '🌐',
-    image: '/projects/portfolio.png',   // ← put screenshots in /public/projects/
+    image: '/projects/portfolio.png',
   },
   {
     title: 'UI/UX Design Projects',
@@ -111,7 +111,10 @@ function ProjectCard({ proj, i }: ProjectCardProps) {
           <div style={{ padding: '16px 18px', display: 'flex', flexDirection: 'column', flex: 1, gap: 10 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ fontSize: 22 }}>{proj.emoji}</span>
-              <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--dark)', fontWeight: 700 }}>{proj.title}</h3>
+              {/* ── project title scrambles on hover ── */}
+              <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--dark)', fontWeight: 700 }}>
+                <ScrambleText text={proj.title} />
+              </h3>
             </div>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-muted)', lineHeight: 1.8, flex: 1 }}>
               {proj.description}
@@ -157,7 +160,6 @@ function ProjectCard({ proj, i }: ProjectCardProps) {
                 display: 'block',
               }}
               onError={(e) => {
-                // Fallback if no image yet
                 (e.target as HTMLImageElement).style.display = 'none'
               }}
             />
@@ -174,7 +176,8 @@ function ProjectCard({ proj, i }: ProjectCardProps) {
               <span style={{ fontSize: 64, opacity: 0.3 }}>{proj.emoji}</span>
             </div>
           </div>
- {/* Bottom bar with links */}
+
+          {/* Bottom bar with links */}
           <div style={{
             padding: '12px 16px',
             background: 'rgba(0,0,0,0.6)',
@@ -184,8 +187,9 @@ function ProjectCard({ proj, i }: ProjectCardProps) {
             justifyContent: 'space-between',
             flexShrink: 0,
           }}>
+            {/* ── project title on back card scrambles on hover ── */}
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--cream)', fontWeight: 700 }}>
-              {proj.title}
+              <ScrambleText text={proj.title} />
             </span>
             <div style={{ display: 'flex', gap: 8 }}>
               {proj.link && proj.link !== '#' && (
@@ -231,6 +235,7 @@ export default function Projects() {
         <div style={{ fontFamily: 'var(--font-pixel)', fontSize: 10, color: 'var(--olive)', letterSpacing: '0.1em', marginBottom: 12 }}>
           // WORKS.DIR
         </div>
+        {/* ── section heading ── */}
         <ScrambleText
           text="My Works"
           style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px, 6vw, 64px)', color: 'var(--dark)', lineHeight: 1 }}

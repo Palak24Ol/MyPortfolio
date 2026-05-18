@@ -64,6 +64,7 @@ export default function Experience() {
         }}>
           // EXPERIENCE.LOG
         </div>
+        {/* ── section heading ── */}
         <ScrambleText
           text="Timeline"
           style={{
@@ -149,14 +150,16 @@ export default function Experience() {
                   marginBottom: 6,
                 }}>
                   <div>
+                    {/* ── role heading scrambles on hover ── */}
                     <div style={{
                       fontFamily: 'var(--font-mono)',
                       fontWeight: 700,
                       fontSize: 14,
                       color: 'var(--dark)',
                     }}>
-                      {item.role}
+                      <ScrambleText text={item.role} />
                     </div>
+                    {/* ── org name scrambles on hover ── */}
                     <div style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: 11,
@@ -164,7 +167,7 @@ export default function Experience() {
                       marginTop: 2,
                       letterSpacing: '0.04em',
                     }}>
-                      @ {item.org}
+                      @ <ScrambleText text={item.org} />
                     </div>
                   </div>
 
