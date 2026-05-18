@@ -29,7 +29,7 @@ export default function RetroWindow({
     : {}
 
   return (
-    // @ts-expect-error — motion.div vs div props
+ 
     <Wrapper className={`retro-window ${className}`} style={style} {...animProps}>
       {/* Title bar */}
       <div className="retro-window__titlebar">
