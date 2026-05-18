@@ -22,6 +22,7 @@ export default function About() {
         <div style={{ fontFamily: 'var(--font-pixel)', fontSize: 10, color: 'var(--olive)', letterSpacing: '0.1em', marginBottom: 12 }}>
           // ABOUT.TXT
         </div>
+        {/* ── "About Me" heading already had ScrambleText ── */}
         <ScrambleText
           text="About Me"
           style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px, 6vw, 64px)', color: 'var(--dark)', lineHeight: 1 }}
@@ -51,7 +52,7 @@ export default function About() {
           </RetroWindow>
         </motion.div>
 
-        {/* RIGHT — 4 boxes each sliding in from extreme right with stagger */}
+        {/* RIGHT — 4 fact boxes, label + value both scramble on hover */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <motion.div
             initial={{ opacity: 0, x: 200 }}
@@ -82,8 +83,14 @@ export default function About() {
             >
               <span style={{ fontSize: 22 }}>{f.icon}</span>
               <div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{f.label}</div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--text)', marginTop: 2 }}>{f.value}</div>
+                {/* ── label scrambles on hover ── */}
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                  <ScrambleText text={f.label} />
+                </div>
+                {/* ── value scrambles on hover ── */}
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--text)', marginTop: 2 }}>
+                  <ScrambleText text={f.value} />
+                </div>
               </div>
             </motion.div>
           ))}

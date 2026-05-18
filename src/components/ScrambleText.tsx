@@ -1,8 +1,4 @@
-
 import { useRef, useCallback } from 'react'
-
-// Only uppercase — matches locomotive's typography feel
-const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 interface ScrambleTextProps {
   text: string
@@ -11,57 +7,67 @@ interface ScrambleTextProps {
 }
 
 export default function ScrambleText({ text, style, className }: ScrambleTextProps) {
-  const elRef      = useRef<HTMLSpanElement>(null)
+  const elRef       = useRef<HTMLSpanElement>(null)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const scramble = useCallback(() => {
     const el = elRef.current
     if (!el) return
 
-    // Clear any running scramble
     if (intervalRef.current) clearInterval(intervalRef.current)
 
-    const chars    = text.split('')
-    const total    = chars.length
-    // How many random cycles each character goes through before locking
+    const chars = text.split('')
+    const total = chars.length
+
     const CYCLES_PER_CHAR = 8
-    // ms between each random frame — this is what makes it readable/slow like loco
-    const FRAME_MS = 45
-    // ms of stagger delay before each successive char starts locking in
-    const STAGGER_MS = 60
+    const FRAME_MS        = 45
+    const STAGGER_MS      = 60
 
-    // Track how many cycles each position has done
-    const cycleCount  = new Array(total).fill(0)
-    // Track which positions have locked in
-    const locked      = new Array(total).fill(false)
+    // ── Only use letters actually present in the text ──────────────────────
+    const charPool = [
+      ...new Set(
+        text
+          .toUpperCase()
+          .split('')
+          .filter(c => /[A-Z0-9]/.test(c))
+      ),
+    ]
+    // Fallback to a safe pool if text has no alphanumeric chars (e.g. pure symbols)
+    const pool = charPool.length > 0 ? charPool : ['#', '@', '!', '?']
 
-    // Stagger: position i locks after i * STAGGER_MS extra cycles worth of time
-    const lockThreshold = chars.map((_, i) => CYCLES_PER_CHAR + Math.floor((i * STAGGER_MS) / FRAME_MS))
+    const cycleCount = new Array(total).fill(0)
+    const locked     = new Array(total).fill(false)
+
+    // ── REVERSE order: last character locks in first ────────────────────────
+    //    position (total-1) gets threshold = CYCLES_PER_CHAR (locks earliest)
+    //    position 0         gets the highest threshold      (locks latest)
+    const lockThreshold = chars.map((_, i) =>
+      CYCLES_PER_CHAR + Math.floor(((total - 1 - i) * STAGGER_MS) / FRAME_MS)
+    )
 
     intervalRef.current = setInterval(() => {
       let allLocked = true
 
       const display = chars.map((char, i) => {
         if (char === ' ') return ' '
-        if (locked[i])   return char   // already settled — show real char
+        if (locked[i])   return char
 
         cycleCount[i]++
 
         if (cycleCount[i] >= lockThreshold[i]) {
           locked[i] = true
-          return char  // lock in
+          return char
         }
 
         allLocked = false
-        // Show a random character while cycling
-        return CHARS[Math.floor(Math.random() * CHARS.length)]
+        return pool[Math.floor(Math.random() * pool.length)]
       })
 
       el.innerText = display.join('')
 
       if (allLocked) {
         clearInterval(intervalRef.current!)
-        el.innerText = text  // snap to original (preserves original casing)
+        el.innerText = text
       }
     }, FRAME_MS)
   }, [text])
@@ -83,4 +89,3 @@ export default function ScrambleText({ text, style, className }: ScrambleTextPro
     </span>
   )
 }
- 
