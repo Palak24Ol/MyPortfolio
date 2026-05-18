@@ -90,7 +90,7 @@ export default function Hero() {
                   Palak Jaiswal
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--olive)', marginTop: 4, letterSpacing: '0.08em' }}>
-                  FULL STACK DEV · UI/UX DESIGNER
+                  FULL STACK DEV · JAVA DEVELOPER
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-muted)', marginTop: 6, fontStyle: 'italic' }}>
                   "Building things that look good &amp; work even better"

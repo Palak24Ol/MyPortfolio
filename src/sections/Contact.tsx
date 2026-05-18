@@ -117,9 +117,9 @@ export default function Contact() {
           </motion.div>
 
           {[
-            { icon: '📧', label: 'Email',    value: 'palakjaiswal@example.com',      href: 'mailto:palakjaiswal@example.com' },
+            { icon: '📧', label: 'Email',    value: 'heyitspalakjaiswal24@gmail.com',      href: 'mailto:heyitspalakjaiswal24@gmail.com' },
             { icon: '🐙', label: 'GitHub',   value: 'github.com/Palak24Ol',          href: 'https://github.com/Palak24Ol' },
-            { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/palak-jaiswal', href: 'https://linkedin.com/in/palak-jaiswal' },
+            { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/palakjaiswal2401', href: 'https://www.linkedin.com/in/palakjaiswal2401' },
           ].map((item, i) => (
             <motion.a
               key={item.label}

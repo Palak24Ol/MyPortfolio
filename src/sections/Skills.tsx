@@ -3,25 +3,27 @@ import RetroWindow from '../components/RetroWindow'
 import ScrambleText from '../components/ScrambleText'
 
 const SKILLS = [
-  { name: 'React / Next.js',   pct: 90, color: 'var(--olive)' },
-  { name: 'TypeScript',        pct: 82, color: 'var(--amber)' },
-  { name: 'Node.js / Express', pct: 78, color: 'var(--olive-light)' },
-  { name: 'UI/UX Design',      pct: 88, color: 'var(--pink-accent)' },
-  { name: 'Figma',             pct: 85, color: 'var(--amber-bright)' },
+  
+  { name: 'Java',   pct: 90, color: 'var(--olive)' },
+  { name: 'React',        pct: 82, color: 'var(--amber)' },
+  { name: 'TypeScript/ JavaScript', pct: 78, color: 'var(--olive-light)' },
+  { name: 'Node.js',      pct: 75, color: 'var(--pink-accent)' },
+  { name: 'SpringBoot',             pct: 85, color: 'var(--amber-bright)' },
   { name: 'MongoDB / SQL',     pct: 75, color: 'var(--olive)' },
+  { name: 'Python',     pct: 70, color: 'var(--amber)' },
 ]
 
 const TOOLS = [
-  { name: 'GitHub',   emoji: '🐙' },
-  { name: 'VS Code',  emoji: '💙' },
-  { name: 'Figma',    emoji: '🎨' },
-  { name: 'Canva',    emoji: '✏️' },
-  { name: 'Tailwind', emoji: '🌊' },
-  { name: 'Three.js', emoji: '🔷' },
-  { name: 'GSAP',     emoji: '⚡' },
-  { name: 'Framer',   emoji: '🖼️' },
-  { name: 'Word',     emoji: '📄' },
-  { name: 'Excel',    emoji: '📊' },
+  { name: 'GitHub',      emoji: '🐙' },
+  { name: 'Postman',     emoji: '📮' },
+  { name: 'Figma',       emoji: '🎨' },
+  { name: 'IntelliJ',    emoji: '🧠' },
+  { name: 'VS Code',     emoji: '💙' },
+  { name: 'Firebase',    emoji: '🔥' },
+  { name: 'Docker',      emoji: '🐳' },
+  { name: 'Swagger',     emoji: '📘' },
+  { name: 'Redis',       emoji: '🟥' },
+  { name: 'MySQL',       emoji: '🛢️' },
 ]
 
 export default function Skills() {

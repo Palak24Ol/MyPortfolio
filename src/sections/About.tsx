@@ -3,9 +3,10 @@ import RetroWindow from '../components/RetroWindow'
 import ScrambleText from '../components/ScrambleText'
 
 const FACTS = [
-  { icon: '🎓', label: 'Education', value: 'B.Tech Computer Science' },
-  { icon: '📍', label: 'Location', value: 'India' },
-  { icon: '💼', label: 'Role', value: 'Full Stack Dev + UI/UX Designer' },
+  { icon: '🎓', label: 'Education', value: 'B.Tech Computer Science and Engineering, NIT PATNA' },
+   
+  { icon: '📍', label: 'Location', value: 'Gorakhpur, India' },
+  { icon: '💼', label: 'Role', value: 'Java Developer and Full Stack Developer' },
   { icon: '☕', label: 'Fuel', value: 'Coffee & late nights' },
 ]
 
@@ -41,13 +42,19 @@ export default function About() {
           <RetroWindow title="C:\PALAK\about.txt" animate={false}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, lineHeight: 2, color: 'var(--text)' }}>
               <span style={{ color: 'var(--olive)' }}>{'>'} </span>
-              Hey! I'm <strong>Palak Jaiswal</strong>, a passionate Full Stack Developer and UI/UX Designer who loves crafting digital experiences that are both beautiful and functional.
+              Hey! I'm <strong>Palak Jaiswal</strong>, part developer,
+part problem solver, and someone who genuinely
+enjoys turning random ideas into real projects.
               <br /><br />
               <span style={{ color: 'var(--olive)' }}>{'>'} </span>
-              I blend <span style={{ color: 'var(--amber)' }}>clean code</span> with <span style={{ color: 'var(--pink-accent)' }}>thoughtful design</span> — turning ideas into polished products.
+              I build 
+ <span style={{ color: 'var(--amber)' }}> scalable backend systems</span>, <span style={{ color: 'var(--pink-accent)' }}>full-stack applications </span>and interactive products using Java, Spring Boot, React,
+and modern web technologies.
               <br /><br />
               <span style={{ color: 'var(--olive)' }}>{'>'} </span>
-              When I'm not coding, I'm exploring UI trends, playing with animations, or sketching out the next wild idea.
+               Beyond coding, you’ll usually find me working on creative
+ideas, organizing events, exploring design trends, or
+turning late-night thoughts into new projects.
             </div>
           </RetroWindow>
         </motion.div>
