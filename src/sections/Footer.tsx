@@ -3,10 +3,10 @@ export default function Footer() {
     <footer style={{
       position: 'relative', zIndex: 1,
       textAlign: 'center',
-      padding: '32px 24px 100px',
+      padding: 'clamp(24px,4vw,32px) 24px clamp(80px,12vw,100px)',
       borderTop: '1px solid var(--window-border)',
     }}>
-      <div style={{ fontFamily: 'var(--font-retro)', fontSize: 16, color: 'var(--text-muted)', letterSpacing: '0.12em' }}>
+      <div style={{ fontFamily: 'var(--font-retro)', fontSize: 'clamp(13px,3vw,16px)', color: 'var(--text-muted)', letterSpacing: '0.12em' }}>
         C:\PALAK{'>'} made with ♥ by <span style={{ color: 'var(--olive)' }}>Palak Jaiswal</span>
       </div>
       <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--text-muted)', marginTop: 8, opacity: 0.5 }}>

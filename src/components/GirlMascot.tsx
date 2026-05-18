@@ -1,7 +1,5 @@
 import { useEffect, useRef } from 'react'
 
-// PORTFOLIO last letter lands at ~5.0s after hero mounts
-// Loader takes ~4s → girl slides in ~1.2s after loader done = ~5.2s total ✓
 const SLIDE_DELAY = '1.2s'
 
 export default function GirlMascot() {
@@ -11,8 +9,9 @@ export default function GirlMascot() {
     const hero = document.getElementById('hero')
     if (!hero) return
 
-    const LARGE = 425
-    const SMALL = 225
+    const isMobile = window.innerWidth < 768
+    const LARGE = isMobile ? 200 : 425
+    const SMALL = isMobile ? 110 : 225
 
     const onScroll = () => {
       const el = imgRef.current
@@ -33,18 +32,25 @@ export default function GirlMascot() {
         @keyframes slideInFromLeft {
           0%   { transform: translateX(-120%); opacity: 0; }
           60%  { opacity: 1; }
-          100% { transform: translateX(0%);   opacity: 1; }
+          100% { transform: translateX(0%); opacity: 1; }
+        }
+        @media (max-width: 768px) {
+          .girl-mascot { width: 200px !important; }
+        }
+        @media (max-width: 480px) {
+          .girl-mascot { width: 140px !important; }
         }
       `}</style>
       <img
         ref={imgRef}
+        className="girl-mascot"
         src="/girl.png"
         alt="mascot"
         style={{
           position: 'fixed',
           bottom: '0px',
           left: '0px',
-          width: 320,
+          width: 425,
           objectFit: 'contain',
           objectPosition: 'bottom',
           transition: 'width 0.2s ease-out',
@@ -52,7 +58,6 @@ export default function GirlMascot() {
           pointerEvents: 'none',
           userSelect: 'none',
           filter: 'drop-shadow(4px 0px 12px rgba(0,0,0,0.15))',
-          // Slide in from left after portfolio text loads
           animation: `slideInFromLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) ${SLIDE_DELAY} both`,
         }}
       />
