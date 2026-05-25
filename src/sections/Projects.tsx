@@ -19,6 +19,17 @@ const PROJECTS = [
   emoji: '📰',
   image: '/projects/deepfake-news.png',
 },
+{
+  title: 'PayPack – Smart Payment & Expense Tracker',
+  path: 'C:\\PALAK\\works\\paypack',
+  description: 'A full-stack payment management app built with Next.js 16 and React 19, featuring Clerk authentication, QR code-based payments, real-time analytics dashboard with Recharts, interactive maps via Leaflet, and a Supabase-powered backend with Zustand for state management.',
+  tags: ['Next.js', 'TypeScript', 'Supabase', 'Clerk'],
+  link: 'https://paypack-pied.vercel.app',
+  github: 'https://github.com/Palak24Ol/paypack',
+  color: 'var(--olive)',
+  emoji: '💸',
+  image: '/projects/paypack.png'
+}
 ]
 
 interface ProjectCardProps { proj: typeof PROJECTS[0]; i: number }
