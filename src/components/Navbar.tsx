@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react'
 
 const NAV_ITEMS = [
   { id: 'home',       label: 'Home',    emoji: '🏠', href: '#hero'       },
+
+  { id: 'resume', label: 'Resume', emoji: '📄', href: '#resume' },
   { id: 'about',      label: 'About',   emoji: '👤', href: '#about'      },
   { id: 'skills',     label: 'Skills',  emoji: '⚡', href: '#skills'     },
   { id: 'experience', label: 'XP',      emoji: '📋', href: '#experience' },
   { id: 'projects',   label: 'Works',   emoji: '📁', href: '#projects'   },
   { id: 'contact',    label: 'Contact', emoji: '✉️', href: '#contact'    },
-  { id: 'resume', label: 'Resume', emoji: '📄', href: '#resume' },
+  
 ]
 
 const SOCIAL_ITEMS = [
