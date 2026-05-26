@@ -18,7 +18,7 @@ const TIMELINE = [
     type: 'edu', role: 'B.Tech — Computer Science', org: 'NATIONAL INSTITUTE OF TECHNOLOGY, PATNA',
     period: '2023 — Present',
     desc: 'Studying core CS fundamentals — data structures, algorithms, databases, and software engineering. Active in coding clubs and hackathons.',
-    tags: ['DSA', 'DBMS', 'OS', 'Networking'], icon: '🎓', color: 'var(--pink-accent)',
+    tags: ['DSA', 'DBMS', 'OS', 'Networking', 'CGPA: 8.15'], icon: '🎓', color: 'var(--pink-accent)',
   },
   {
     type: 'edu', role: 'Higher Secondary (12th)', org: 'G N National Public School, Gorakhpur',
